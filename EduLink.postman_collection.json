@@ -1,0 +1,942 @@
+{
+	"info": {
+		"_postman_id": "ded6fa2e-21e8-4116-86d6-851460845793",
+		"name": "EduLink",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39602720"
+	},
+	"item": [
+		{
+			"name": "Inscription et Connexion",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstname\": \"Alii\",\r\n  \"lastname\": \"Rebai\",\r\n  \"email\": \"alii@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"phone\": \"+1234567890\",\r\n  \"role\": \"ADMIN\"\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGkiLCJsYXN0TmFtZSI6IlJlYmFpIiwicm9sZSI6IkFETUlOIiwiaWQiOiI2NzU3NDM5MmMyMTZkYjAxZDRkYmMwYWUiLCJlbWFpbCI6ImFsaUBnbWFpbC5jb20iLCJzdWIiOiJhbGlAZ21haWwuY29tIiwiaWF0IjoxNzMzNzcyMjc3LCJleHAiOjE3MzM4NTg2Nzd9.tNyqgM1bzjQfjycu-fhLa7Pco4zU_W5Y3AwUSuo0bJA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"alii@gmail.com\",\r\n  \"password\": \"123456\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestion profil user",
+			"item": [
+				{
+					"name": "Modifier profil",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"rebai\",\r\n  \"lastName\": \"ali\",\r\n  \"address\": \"ariana\",\r\n  \"bio\": \"A java developer\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/users/67587adc405d684f6b572a2e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"users",
+								"67587adc405d684f6b572a2e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addimageprofil",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "image",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/dell/Downloads/sp3.drawio.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/users/677c2967f809d613d8edbfc4/profile-image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"users",
+								"677c2967f809d613d8edbfc4",
+								"profile-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "supprimerimageprofil",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/users/67587adc405d684f6b572a2e/profile-image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"users",
+								"67587adc405d684f6b572a2e",
+								"profile-image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publications",
+			"item": [
+				{
+					"name": "Creepublication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image ",
+									"type": "file",
+									"src": "/C:/Users/dell/Downloads/a2870942-717f-4c31-87c9-702bc017faee.jpeg"
+								},
+								{
+									"key": "textContent",
+									"value": "\"dev\"",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "[\"java\", \"types\"]",
+									"type": "text"
+								},
+								{
+									"key": "idUser",
+									"value": "67587adc405d684f6b572a2e",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/publications/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"publications",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifierpublication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "publicationDTO",
+									"value": "{\n  \"textContent\": \"Updated content of the publication\",\n  \"tags\": [\"tag1\", \"tag2\"]\n}\n",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/dell/Downloads/a2870942-717f-4c31-87c9-702bc017faee.jpeg"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/publications/update/67587c76405d684f6b572a31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"publications",
+								"update",
+								"67587c76405d684f6b572a31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimerpublication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJhbG91bG91IiwibGFzdE5hbWUiOiJhbGkiLCJyb2xlIjoiQURNSU4iLCJpZCI6IjY3NTc0MzkyYzIxNmRiMDFkNGRiYzBhZSIsImVtYWlsIjoiYWxpQGdtYWlsLmNvbSIsInN1YiI6ImFsaUBnbWFpbC5jb20iLCJpYXQiOjE3MzM3OTQ0NzUsImV4cCI6MTczMzg4MDg3NX0.SZhENB1jf5tZAo16FrS5XllX0YcT8d37Vv7HATlmJcE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/publications/delete/67579abbd72f0f32362b2c83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"publications",
+								"delete",
+								"67579abbd72f0f32362b2c83"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getpublication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJhbG91bG91IiwibGFzdE5hbWUiOiJhbGkiLCJyb2xlIjoiQURNSU4iLCJpZCI6IjY3NTc0MzkyYzIxNmRiMDFkNGRiYzBhZSIsImVtYWlsIjoiYWxpQGdtYWlsLmNvbSIsInN1YiI6ImFsaUBnbWFpbC5jb20iLCJpYXQiOjE3MzM3OTQ0NzUsImV4cCI6MTczMzg4MDg3NX0.SZhENB1jf5tZAo16FrS5XllX0YcT8d37Vv7HATlmJcE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/publications/67579b72d72f0f32362b2c84",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"publications",
+								"67579b72d72f0f32362b2c84"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPublications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/publications/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"publications",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addLikeToPublication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJhbG91bG91IiwibGFzdE5hbWUiOiJhbGkiLCJyb2xlIjoiQURNSU4iLCJpZCI6IjY3NTc0MzkyYzIxNmRiMDFkNGRiYzBhZSIsImVtYWlsIjoiYWxpQGdtYWlsLmNvbSIsInN1YiI6ImFsaUBnbWFpbC5jb20iLCJpYXQiOjE3MzM3OTQ0NzUsImV4cCI6MTczMzg4MDg3NX0.SZhENB1jf5tZAo16FrS5XllX0YcT8d37Vv7HATlmJcE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userId",
+									"value": "672e2f47676c9850061df952",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/publications/67579b72d72f0f32362b2c84/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"publications",
+								"67579b72d72f0f32362b2c84",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCommentToPublication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJhbG91bG91IiwibGFzdE5hbWUiOiJhbGkiLCJyb2xlIjoiQURNSU4iLCJpZCI6IjY3NTc0MzkyYzIxNmRiMDFkNGRiYzBhZSIsImVtYWlsIjoiYWxpQGdtYWlsLmNvbSIsInN1YiI6ImFsaUBnbWFpbC5jb20iLCJpYXQiOjE3MzM3OTQ0NzUsImV4cCI6MTczMzg4MDg3NX0.SZhENB1jf5tZAo16FrS5XllX0YcT8d37Vv7HATlmJcE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"67574392c216db01d4dbc0ae\",\r\n    \"text\": \"Super contenu!\"\r\n    \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/publications/67579b72d72f0f32362b2c84/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"publications",
+								"67579b72d72f0f32362b2c84",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MessageriePrivée",
+			"item": [
+				{
+					"name": "Créergroupe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"GroupAngular\",\r\n  \"description\": \"Group revision\",\r\n  \"members\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rejoindregroupe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/groups/675886c3025c3149b445d759/join?userId=67587adc405d684f6b572a2e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"groups",
+								"675886c3025c3149b445d759",
+								"join"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "67587adc405d684f6b572a2e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quittergroupe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/groups/675886c3025c3149b445d759/leave?userId=67587adc405d684f6b572a2e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"groups",
+								"675886c3025c3149b445d759",
+								"leave"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "67587adc405d684f6b572a2e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PublierMSGgroupe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"Hello Group!\",\r\n  \"sender\": {\r\n    \"id\": \"67587adc405d684f6b572a2e\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/groups/675886c3025c3149b445d759/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"groups",
+								"675886c3025c3149b445d759",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetmsgGroupe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/groups/675886c3025c3149b445d759/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"groups",
+								"675886c3025c3149b445d759",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendmsguser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"slm\",\r\n  \"sender\": {\r\n    \"id\": \"67587adc405d684f6b572a2e\"\r\n  },\r\n  \"recipient\": {\r\n    \"id\": \"67587a96405d684f6b572a2c\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/messages/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"messages",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "’historiquemessages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/messages/history?userId1=67587adc405d684f6b572a2e&userId2=67587a96405d684f6b572a2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"messages",
+								"history"
+							],
+							"query": [
+								{
+									"key": "userId1",
+									"value": "67587adc405d684f6b572a2e"
+								},
+								{
+									"key": "userId2",
+									"value": "67587a96405d684f6b572a2c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "événement",
+			"item": [
+				{
+					"name": "creeévénement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Formation java\",\r\n  \"description\": \"java poo\",\r\n  \"dateTime\": 1672327200000,  // timestamp de la date de l'événement\r\n  \"organizer\": {\r\n    \"id\": \"67587adc405d684f6b572a2e\"\r\n  },\r\n  \"participants\": []\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getevent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJBbGlpIiwibGFzdE5hbWUiOiJSZWJhaSIsInJvbGUiOiJBRE1JTiIsImlkIjoiNjc1ODdhZGM0MDVkNjg0ZjZiNTcyYTJlIiwiZW1haWwiOiJhbGlpQGdtYWlsLmNvbSIsInN1YiI6ImFsaWlAZ21haWwuY29tIiwiaWF0IjoxNzMzODUxODc4LCJleHAiOjE3MzM5MzgyNzh9.2EJ2tmAAt3bGeXoymyK_HCGh2EWD9bt5aqtdwNe6TmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inscriEvénement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJyZWJhaSIsImxhc3ROYW1lIjoiYWxpIiwicm9sZSI6IkFETUlOIiwiaWQiOiI2NzU4N2FkYzQwNWQ2ODRmNmI1NzJhMmUiLCJlbWFpbCI6ImFsaWlAZ21haWwuY29tIiwic3ViIjoiYWxpaUBnbWFpbC5jb20iLCJpYXQiOjE3MzM4NjQ0MzgsImV4cCI6MTczMzk1MDgzOH0.i7LNs0mlRhkUwP53SlbvjA0p_Sp0OMyROoaIuydcPfc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8580/api/v1/auth/events/6758aae8ab6afc63ed5f50cd/signup?userId=67587adc405d684f6b572a2e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8580",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"events",
+								"6758aae8ab6afc63ed5f50cd",
+								"signup"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "67587adc405d684f6b572a2e"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
